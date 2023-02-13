@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "weekdays": "node -r dotenv/config index.js weekdays"
+    "weekdays": "node index.js weekdays"
   },
   "author": "Faiz Maricar",
   "license": "ISC",
