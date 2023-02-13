@@ -13,6 +13,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "12.x"
+        env:
           NOTION_KEY: ${{secrets.NOTION_KEY}}
           NOTION_DATABASE_ID: ${{secrets.NOTION_DATABASE_ID}}
       - run: npm ci
