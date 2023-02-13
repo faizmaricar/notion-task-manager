@@ -3,20 +3,20 @@ name: Manually add recurring weekday events to notion
 on:
   workflow_dispatch:
 
+env:
+  NOTION_KEY: ${{ secrets.NOTION_KEY }}
+  NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "12.x"
-        env:
-          NOTION_KEY: ${{ secrets.NOTION_KEY }}
-          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-      - run: echo $NOTION_KEY
+      - run: echo "$NOTION_KEY"
       #- run: npm ci
       #- run: npm run build --if-present
       #- run: npm run weekdays
