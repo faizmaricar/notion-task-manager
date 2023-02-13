@@ -22,8 +22,7 @@ export default async function addEvent(name, start, end = null) {
         select: { name: "Event" },
       },
     });
-    console.log(response);
-    console.log("Success! Event added.");
+    console.log(`Success! Event added. ${response.url}`);
   } catch (error) {
     console.error(error.body);
   }
