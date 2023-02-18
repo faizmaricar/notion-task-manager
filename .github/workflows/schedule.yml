@@ -1,4 +1,4 @@
-name: Add recurring weekday events to notion
+name: Add recurring schedule events to notion
 
 on:
   schedule:
@@ -19,4 +19,4 @@ jobs:
           node-version: "12.x"
       - run: npm ci
       - run: npm run build --if-present
-      - run: npm run weekdays
+      - run: npm run schedule

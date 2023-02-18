@@ -1,0 +1,15 @@
+--- # My Schedule
+weekdays:
+  - event: Running,
+    hour: 6
+    end: 60
+  - event: Work
+    hour: 8
+    minute: 30
+    end: 540
+weekly:
+  - event: Haircut
+    hour: 10
+    minute: 30
+    end: 120
+    every: 3
