@@ -1,10 +1,10 @@
-import updateSchedule from "./src/updateSchedule.js";
+import schedule from "./src/schedule/index.js";
 
 const [, , command] = process.argv;
 
 switch (command) {
   case "schedule":
-    updateSchedule();
+    schedule();
     break;
   default:
     console.log("Enter command: [ weekdays ]");

@@ -7,8 +7,12 @@ weekdays:
     hour: 8
     minute: 30
     end: 540
+  - event: Walk
+    hour: 18
+    end: 30
 weekly:
   - event: Haircut
+    day: 5
     hour: 10
     minute: 30
     end: 120
