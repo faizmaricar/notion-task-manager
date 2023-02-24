@@ -5,7 +5,7 @@
   "description": "Automating tasks in notion",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "schedule": "node -r dotenv/config index.js schedule"
   },
   "author": "Faiz Maricar",
@@ -16,5 +16,15 @@
     "date-fns-tz": "^2.0.0",
     "dotenv": "^16.0.3",
     "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "babel-jest": "^29.4.3",
+    "jest": "^29.4.3"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
   }
 }

@@ -12,7 +12,7 @@ weekdays:
     end: 30
 weekly:
   - event: Haircut
-    day: 5
+    day: Saturday
     hour: 10
     minute: 30
     end: 120
