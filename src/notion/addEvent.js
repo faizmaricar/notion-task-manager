@@ -1,4 +1,4 @@
-import createPage from "./createPage.js";
+import { createPage } from "./index.js";
 
 export default async function addEvent(name, start, end = null) {
   try {

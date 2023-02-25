@@ -1,23 +1,28 @@
 import { addMinutes, getWeek, nextDay } from "date-fns";
-import { getDayNumber } from "../utils/index.js";
-import addEvent from "../addEvent.js";
 
-export default function updateSchedule(items, day) {
-  for (let item of items) {
+import { getDayNumber } from "../utils/index.js";
+import { addEvent } from "../notion/index.js";
+
+export default function updateSchedule(events, day) {
+  for (let event of events) {
     let {
-      event,
+      event: name,
       day: scheduledDay = day,
       hour = 0,
       minute = 0,
       end = 30,
       every = 1,
-    } = item;
+    } = event;
 
-    const date = nextDay(new Date(), getDayNumber(scheduledDay));
+    const today = new Date();
+    const dayNumber = getDayNumber(scheduledDay);
+    const date = nextDay(today, dayNumber);
     const week = getWeek(date);
 
     date.setHours(hour, minute);
 
-    if (week % every === 0) addEvent(event, date, addMinutes(date, end));
+    const endTime = addMinutes(date, end);
+
+    if (week % every === 0) addEvent(name, date, endTime);
   }
 }
