@@ -1,6 +1,6 @@
 --- # My Schedule
 weekdays:
-  - event: Running,
+  - event: Running
     hour: 6
     end: 60
   - event: Work
