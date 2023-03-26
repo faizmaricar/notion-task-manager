@@ -18,7 +18,6 @@ export default function updateSchedule(events, day) {
     const dayNumber = getDayNumber(scheduledDay);
     const date = nextDay(today, dayNumber);
     let week = getWeek(date);
-    dayNumber > 0 && week++;
 
     date.setHours(hour, minute);
 
