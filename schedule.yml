@@ -3,17 +3,17 @@ weekdays:
   - event: Running
     hour: 6
     end: 60
-  - event: Work
+daily:
+  - event: Gym
+    hour: 7
+    end: 60
+  - event: Shower and Rest
     hour: 8
-    minute: 30
-    end: 540
-  - event: Walk
-    hour: 18
-    end: 30
+    end: 60
 weekly:
   - event: Haircut
-    day: Saturday
-    hour: 10
-    minute: 30
+    day: Sunday
+    hour: 9
+    minute: 00
     end: 120
-    every: 3
+    every: 4

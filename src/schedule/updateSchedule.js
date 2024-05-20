@@ -22,7 +22,6 @@ export default function updateSchedule(events, day) {
     date.setHours(hour, minute);
 
     const endTime = addMinutes(date, end);
-
     if (week % every === 0) addEvent(name, date, endTime);
   }
 }
