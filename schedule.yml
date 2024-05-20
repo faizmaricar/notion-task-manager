@@ -10,6 +10,21 @@ daily:
   - event: Shower and Rest
     hour: 8
     end: 60
+  - event: Breakfast
+    hour: 10
+    end: 30
+  - event: Protein Shake Noon
+    hour: 12
+    end: 30
+  - event: Lunch
+    hour: 2
+    end: 30
+  - event: Protein Shake AfterNoon
+    hour: 4
+    end: 30
+  - event: Dinner
+    hour: 3
+    end: 30
 weekly:
   - event: Haircut
     day: Sunday
