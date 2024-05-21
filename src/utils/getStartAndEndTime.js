@@ -7,11 +7,7 @@ export default function getStartAndEndTime(start, duration) {
   let todayString = format(today, "dd/MM/yyyy");
   todayString = `${todayString} ${start}`;
 
-  const startTime = utcToZonedTime(
-    parse(todayString, "dd/MM/yyyy HHmm", new Date()),
-    "Asia/Singapore"
-  );
-
+  const startTime = parse(todayString, "dd/MM/yyyy HHmm", new Date());
   const endTime = addMinutes(startTime, duration);
 
   return [startTime, endTime];

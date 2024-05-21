@@ -8,7 +8,7 @@ export default async function updatePrayerschedule() {
 
   for (let timing in timings) {
     const time = timings[timing];
-    const [startTime, endTime] = createStartAndEndTime(
+    const [startTime] = createStartAndEndTime(
       PrayerDate,
       time,
       timing === "Subuh"
@@ -20,6 +20,5 @@ export default async function updatePrayerschedule() {
 function createStartAndEndTime(PrayerDate, timing, am = false) {
   const datetimestring = `${PrayerDate} ${timing} ${am ? "AM" : "PM"}`;
   const startTime = parse(datetimestring, "dd MMMM yyyy h:mm a", new Date());
-  const endTime = addMinutes(startTime, 5);
-  return [startTime, endTime];
+  return [startTime];
 }
