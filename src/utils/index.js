@@ -1,5 +1,7 @@
-import getDayNumber, { dayNumbers } from "./getDayNumber.js";
 import getPath from "./getPath.js";
+import getPrayerTimes from "./getPrayerTimes.js";
+import getStartAndEndTime from "./getStartAndEndTime.js";
+import isWeekday from "./isWeekday.js";
 import readYaml from "./readYaml.js";
 
-export { getDayNumber, dayNumbers, getPath, readYaml };
+export { getPath, getPrayerTimes, getStartAndEndTime, isWeekday, readYaml };

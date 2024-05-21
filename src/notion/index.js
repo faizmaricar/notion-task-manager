@@ -1,4 +1,4 @@
-import addEvent from "./addEvent.js";
+import addPage from "./addPage.js";
 import createPage from "./createPage.js";
 
-export { createPage, addEvent };
+export { createPage, addPage };

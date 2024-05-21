@@ -1,27 +1,31 @@
-import { addMinutes, getWeek, nextDay } from "date-fns";
+import {
+  getPath,
+  readYaml,
+  getStartAndEndTime,
+  isWeekday,
+} from "../utils/index.js";
+import { addPage } from "../notion/index.js";
 
-import { getDayNumber } from "../utils/index.js";
-import { addEvent } from "../notion/index.js";
+export default function updateSchedule() {
+  const schedulePath = getPath("schedule.yml");
+  const items = readYaml(schedulePath);
 
-export default function updateSchedule(events, day) {
-  for (let event of events) {
-    let {
-      event: name,
-      day: scheduledDay = day,
-      hour = 0,
-      minute = 0,
-      end = 30,
-      every = 1,
-    } = event;
-
-    const today = new Date();
-    const dayNumber = getDayNumber(scheduledDay);
-    const date = nextDay(today, dayNumber);
-    let week = getWeek(date);
-
-    date.setHours(hour, minute);
-
-    const endTime = addMinutes(date, end);
-    if (week % every === 0) addEvent(name, date, endTime);
+  for (let item of items) {
+    const { title, type, frequency, start, duration } = item;
+    const [startTime, endTime] = getStartAndEndTime(start, duration);
+    switch (frequency) {
+      case "monthly":
+      case "weekly":
+        break;
+      case "daily":
+        addPage(title, type, startTime, endTime);
+        break;
+      case "weekdays":
+        if (isWeekday(startTime)) addPage(title, type, startTime, endTime);
+      case "weekends":
+        break;
+      default:
+        break;
+    }
   }
 }

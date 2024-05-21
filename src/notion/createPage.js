@@ -1,4 +1,5 @@
 import { Client } from "@notionhq/client";
+import { addMinutes } from "date-fns";
 
 const notion = new Client({ auth: process.env.NOTION_KEY });
 
@@ -9,5 +10,6 @@ export default async function createPage(properties) {
     parent: { database_id: databaseId },
     properties,
   });
+
   return response;
 }

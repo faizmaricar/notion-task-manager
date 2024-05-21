@@ -1,6 +1,6 @@
 import { addMinutes, parse } from "date-fns";
-import { addEvent } from "../notion/index.js";
-import getPrayerTimes from "../utils/getPrayerTimes.js";
+import { addPage } from "../notion/index.js";
+import { getPrayerTimes } from "../utils/index.js";
 
 export default async function updatePrayerschedule() {
   const now = Date.now();
@@ -13,7 +13,7 @@ export default async function updatePrayerschedule() {
       time,
       timing === "Subuh"
     );
-    addEvent(timing, startTime, endTime);
+    addPage(timing, "Event", startTime);
   }
 }
 

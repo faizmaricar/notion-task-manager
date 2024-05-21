@@ -1,34 +1,41 @@
---- # My Schedule
-weekdays:
-  - event: Running
-    hour: 6
-    end: 60
-daily:
-  - event: Gym
-    hour: 7
-    end: 60
-  - event: Shower and Rest
-    hour: 8
-    end: 60
-  - event: Breakfast
-    hour: 10
-    end: 30
-  - event: Protein Shake Noon
-    hour: 12
-    end: 30
-  - event: Lunch
-    hour: 2
-    end: 30
-  - event: Protein Shake AfterNoon
-    hour: 4
-    end: 30
-  - event: Dinner
-    hour: 3
-    end: 30
-weekly:
-  - event: Haircut
-    day: Sunday
-    hour: 9
-    minute: 00
-    end: 120
-    every: 4
+--- # My schedule
+- title: Running
+  type: Event
+  start: "0600"
+  duration: 60
+  frequency: "weekdays"
+- title: Gym
+  type: Event
+  start: "0700"
+  duration: 60
+  frequency: "daily"
+- title: Shower and Rest
+  type: Event
+  start: "0800"
+  duration: 60
+  frequency: "daily"
+- title: Breakfast
+  type: Event
+  start: "1000"
+  duration: 30
+  frequency: "daily"
+- title: Protein Shake Noon
+  type: Event
+  start: "1200"
+  duration: 30
+  frequency: "daily"
+- title: Lunch
+  type: Event
+  start: "1400"
+  duration: 30
+  frequency: "daily"
+- title: Protein Shake Afternoon
+  type: Event
+  start: "1600"
+  duration: 30
+  frequency: "daily"
+- title: Dinner
+  type: Event
+  start: "1800"
+  duration: 30
+  frequency: "daily"
