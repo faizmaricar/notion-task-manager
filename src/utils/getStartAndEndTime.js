@@ -1,8 +1,8 @@
 import { addMinutes, format, parse } from "date-fns";
-import { utcToZonedTime } from "date-fns-tz";
 
 export default function getStartAndEndTime(start, duration) {
   const today = new Date();
+  if (!start && !duration) return [today, null];
 
   let todayString = format(today, "dd/MM/yyyy");
   todayString = `${todayString} ${start}`;

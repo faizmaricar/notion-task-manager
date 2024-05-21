@@ -3,47 +3,55 @@
   type: Event
   start: "0600"
   duration: 60
-  frequency: "weekdays"
+  frequency: weekdays
 - title: Gym
   type: Event
   start: "0700"
   duration: 60
-  frequency: "daily"
+  frequency: daily
 - title: Shower and Rest
   type: Event
   start: "0800"
   duration: 60
-  frequency: "daily"
+  frequency: daily
 - title: Breakfast
   type: Event
   start: "1000"
   duration: 30
-  frequency: "daily"
+  frequency: daily
 - title: Protein Shake Noon
   type: Event
   start: "1200"
   duration: 30
-  frequency: "daily"
+  frequency: daily
 - title: Lunch
   type: Event
   start: "1400"
   duration: 30
-  frequency: "daily"
+  frequency: daily
 - title: Protein Shake Afternoon
   type: Event
   start: "1600"
   duration: 30
-  frequency: "daily"
+  frequency: daily
 - title: Dinner
   type: Event
   start: "1800"
   duration: 30
-  frequency: "daily"
+  frequency: daily
 - title: Haircut
   type: Event
   start: "0900"
   duration: 60
-  frequency: "weekly"
+  frequency: weekly
   day: 0
   every: 4
   from: 05/05/2024
+- title: Citibank Credit Card Bill Payment
+  type: Task
+  frequency: monthly
+  day: 5
+- title: DBS Credit Card Bill Payment
+  type: Task
+  frequency: monthly
+  day: 12
