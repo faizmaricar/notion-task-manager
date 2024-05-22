@@ -2,7 +2,7 @@ name: Add recurring schedule events to notion
 
 on:
   schedule:
-    - cron: "0 21 * * 0"
+    - cron: "0 21 * * *"
 
 env:
   NOTION_KEY: ${{ secrets.NOTION_KEY }}

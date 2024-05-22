@@ -6,7 +6,7 @@ import {
   isThisWeek,
 } from "../utils/index.js";
 import { addPage } from "../notion/index.js";
-import { isWeekend } from "date-fns";
+import { getDay, isWeekend } from "date-fns";
 
 export default function updateSchedule() {
   const schedulePath = getPath("schedule.yml");
