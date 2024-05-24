@@ -25,7 +25,7 @@ export default function updateSchedule() {
     } = item;
     const [startTime, endTime] = getStartAndEndTime(start, duration);
     console.log("[DEBUG]:", startTime, endTime);
-    return;
+    continue;
     switch (frequency) {
       case "monthly":
         if (getDay(startTime) === day) addPage(title, type, startTime, endTime);
