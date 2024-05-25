@@ -11,7 +11,7 @@ export default async function updatePrayerschedule() {
     const [startTime] = createStartAndEndTime(
       PrayerDate,
       time,
-      timing === "Subuh"
+      timing === "Subuh" || timing === "Syuruk"
     );
     addPage(timing, "Event", startTime);
   }
