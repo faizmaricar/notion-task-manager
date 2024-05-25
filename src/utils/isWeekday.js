@@ -1,6 +1,5 @@
-import { addMilliseconds, getDay } from "date-fns";
+import { isWeekend } from "date-fns";
 
 export default function isWeekday(date) {
-  const singaporeDate = addMilliseconds(date, 8 * 60 * 60 * 1000);
-  return getDay(singaporeDate) < 5;
+  return !isWeekend(date);
 }
