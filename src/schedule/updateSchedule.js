@@ -6,7 +6,7 @@ import {
   isThisWeek,
 } from "../utils/index.js";
 import { addPage } from "../notion/index.js";
-import { getDay, isWeekend } from "date-fns";
+import { addMilliseconds, getDay, isWeekend } from "date-fns";
 
 export default function updateSchedule() {
   const schedulePath = getPath("schedule.yml");
@@ -25,9 +25,12 @@ export default function updateSchedule() {
     } = item;
     const [startTime, endTime] = getStartAndEndTime(start, duration);
 
+    const now = new Date();
+    const sgDate = addMilliseconds(now, 8 * 60 * 60 * 1000);
+
     switch (frequency) {
       case "monthly":
-        if (getDay(startTime) === day) addPage(title, type, startTime, endTime);
+        if (getDay(sgDate) === day) addPage(title, type, startTime, endTime);
       case "weekly":
         if (isThisWeek(startTime, from, every, day))
           addPage(title, type, startTime, endTime);
@@ -36,9 +39,9 @@ export default function updateSchedule() {
         addPage(title, type, startTime, endTime);
         break;
       case "weekdays":
-        if (isWeekday(startTime)) addPage(title, type, startTime, endTime);
+        if (!isWeekend(sgDate)) addPage(title, type, startTime, endTime);
       case "weekends":
-        if (isWeekend(startTime)) addPage(title, type, startTime, endTime);
+        if (isWeekend(sgDate)) addPage(title, type, startTime, endTime);
         break;
       default:
         break;
