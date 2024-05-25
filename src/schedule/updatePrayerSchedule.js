@@ -4,7 +4,7 @@ import { getPrayerTimes } from "../utils/index.js";
 
 export default async function updatePrayerschedule() {
   const now = Date.now();
-  const { PrayerDate, Hijri, Syuruk, ...timings } = await getPrayerTimes(now);
+  const { PrayerDate, Hijri, ...timings } = await getPrayerTimes(now);
 
   for (let timing in timings) {
     const time = timings[timing];

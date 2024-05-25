@@ -1,4 +1,4 @@
-import { addDays, addMinutes, format, parse } from "date-fns";
+import { addMinutes, parse } from "date-fns";
 
 export default function getStartAndEndTime(start, duration) {
   const today = new Date();
