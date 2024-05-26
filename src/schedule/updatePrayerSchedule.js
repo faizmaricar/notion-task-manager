@@ -1,6 +1,7 @@
 import { parse } from "date-fns";
 import { addPage } from "../notion/index.js";
 import { getPrayerTimes } from "../utils/index.js";
+import updateSchedule from "./updateSchedule.js";
 
 export default async function updatePrayerschedule() {
   const now = Date.now();
@@ -15,6 +16,7 @@ export default async function updatePrayerschedule() {
     );
     addPage(timing, "Event", startTime);
   }
+  updateSchedule(PrayerDate);
 }
 
 function createStartAndEndTime(PrayerDate, timing, am = false) {

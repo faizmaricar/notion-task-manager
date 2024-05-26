@@ -1,14 +1,8 @@
 import { addMinutes, parse } from "date-fns";
 
-export default function getStartAndEndTime(start, duration) {
+export default function getStartAndEndTime(date, start, duration) {
   const today = new Date();
-
-  const startTime = parse(
-    start,
-    "HHmm",
-    new Date(today.getTime() + 8 * 60 * 60 * 1000)
-  );
-
+  const startTime = parse(`${date} ${start}`, "dd MMMM yyyy HH:mm", today);
   const endTime = addMinutes(startTime, duration);
 
   if (!start && !duration) return [today, null];

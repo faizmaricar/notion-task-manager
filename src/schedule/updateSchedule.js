@@ -7,7 +7,7 @@ import {
 import { addPage } from "../notion/index.js";
 import { getDay, isWeekend } from "date-fns";
 
-export default function updateSchedule() {
+export default function updateSchedule(date) {
   const schedulePath = getPath("schedule.yml");
   const items = readYaml(schedulePath);
 
@@ -22,7 +22,7 @@ export default function updateSchedule() {
       from,
       every = 1,
     } = item;
-    const [startTime, endTime] = getStartAndEndTime(start, duration);
+    const [startTime, endTime] = getStartAndEndTime(date, start, duration);
 
     switch (frequency) {
       case "monthly":
