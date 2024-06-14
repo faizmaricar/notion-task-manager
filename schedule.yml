@@ -14,6 +14,16 @@
   start: "0800"
   duration: 60
   frequency: daily
+- title: Coding practice
+  type: Event
+  start: "0900"
+  duration: 60
+  frequency: weekdays
+- title: Reading
+  type: Event
+  start: "0900"
+  duration: 60
+  frequency: weekends
 - title: Breakfast
   type: Event
   start: "1000"
@@ -41,7 +51,7 @@
   frequency: daily
 - title: Haircut
   type: Event
-  start: "0900"
+  start: "1030"
   duration: 60
   frequency: weekly
   day: 0
